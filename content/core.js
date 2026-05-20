@@ -33,7 +33,7 @@ let hasCustomNotificationSound = false;
 let customNotificationSoundData = null;
 let lastProcessedSelectiveTradePolicyRequestAt = null;
 let selectiveTradePolicyAvailable = false;
-let cheatsAvailable = false;
+let cheatsAvailable = true;
 let translations = i18n?.DEFAULT_TRANSLATIONS || {};
 
 // Shared settings, defaults, and filter normalization live in `shared/settings.js`
@@ -174,7 +174,7 @@ function syncNukeSuggestionsHelper() {
       source: BRIDGE_SOURCE_EXTENSION,
       type: "SHOW_NUKE_SUGGESTIONS",
       payload: {
-        enabled: Boolean(settings.showNukeSuggestions && cheatsAvailable),
+        enabled: Boolean(settings.showNukeSuggestions),
       },
     },
     "*",
@@ -187,7 +187,7 @@ function syncAutoNukeHelper() {
       source: BRIDGE_SOURCE_EXTENSION,
       type: "SET_AUTO_NUKE",
       payload: {
-        enabled: Boolean(settings.autoNuke && cheatsAvailable),
+        enabled: Boolean(settings.autoNuke),
         includeAllies: Boolean(settings.autoNukeIncludeAllies),
       },
     },
@@ -272,7 +272,7 @@ function updateAutoCancelDeniedTradesAvailability(available) {
 }
 
 function updateCheatsAvailability(available) {
-  const nextAvailable = Boolean(available);
+  const nextAvailable = true;
   const availabilityChanged =
     nextAvailable !== cheatsAvailable ||
     nextAvailable !== Boolean(settings.cheatsAvailable);
