@@ -62,7 +62,7 @@
     showTradeBalances: false,
     selectiveTradePolicyEnabled: false,
     autoCancelDeniedTradesAvailable: false,
-    cheatsAvailable: false,
+    cheatsAvailable: true,
     showNukePrediction: false,
     showNukeSuggestions: false,
     showBoatPrediction: false,
