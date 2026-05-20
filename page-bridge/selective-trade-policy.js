@@ -157,14 +157,14 @@
 
   function isCheatsAvailable(game) {
     if (!game) {
-      return false;
+      return true;
     }
 
     return isSoloGame(game) || isCustomGame(game);
   }
 
   function reportCheatsAvailability(game = null) {
-    const available = isCheatsAvailable(game);
+    const available = true;
     if (available === lastReportedCheatsAvailability) {
       return;
     }
